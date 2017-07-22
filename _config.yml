@@ -1,18 +1,18 @@
 # Site settings
-title: Pratik Mishra
-description: 'Bibliophile | Mathematician | Sportsperson | Programmer | I binge watch TV shows and can sometimes rhyme words'
+title: Justin Chou
+description: '人生的奇妙在于，将不可能变成可能。'
 url: 'https://JustOneLastDance.github.io'
 baseurl: 'https://JustOneLastDance.github.io/'
 google_analytics: #
 # disqus_shortname: 'your-disqus-name'
 
 author:
-  name: 'JustOneLastDance'
-  email: pratikmishra001@gmail.com
-  twitter_username: pratikmishra001
-  facebook_username: pratik.mishra.9
-  github_username:  pratik1105
-  linkedin_username:  pratik1105
+  name: 'Justin Chou'
+  email: justinchou186@gmail.com
+  twitter_username: 
+  facebook_username:
+  github_username:  JustOneLastDance
+  linkedin_username:
 
 defaults:
   -
