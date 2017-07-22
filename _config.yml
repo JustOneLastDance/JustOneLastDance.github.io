@@ -1,0 +1,40 @@
+# Site settings
+title: Pratik Mishra
+description: 'Bibliophile | Mathematician | Sportsperson | Programmer | I binge watch TV shows and can sometimes rhyme words'
+url: 'https://JustOneLastDance.github.io'
+baseurl: 'https://JustOneLastDance.github.io/'
+google_analytics: #
+# disqus_shortname: 'your-disqus-name'
+
+author:
+  name: 'JustOneLastDance'
+  email: pratikmishra001@gmail.com
+  twitter_username: pratikmishra001
+  facebook_username: pratik.mishra.9
+  github_username:  pratik1105
+  linkedin_username:  pratik1105
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  syntax_highlighter: rouge
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+gems: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'src']
