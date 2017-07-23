@@ -17,11 +17,11 @@ description: 框架
 两个框架中存在许多类似的类型，名字相同，只是前缀不同而已。
 
 
-| Core Foundation | Foundation |
-| --------------- | ---------- |
-| CFString        | NSString   |
-| CFArray         | NSArray    |
-| CFDictionary    | NSDictionary |
+| Core Foundation | Foundation |  
+| --------------- | ---------- |  
+| CFString        | NSString   |  
+| CFArray         | NSArray    |  
+| CFDictionary    | NSDictionary |  
 
 
 `CF` 取自于 `Core Foundation` 的首字母
@@ -35,7 +35,7 @@ typedef const struct CF_BRIDGED_TYPE(NSString) __CFString * CFStringRef;
 
 在某些情况下，需要同时使用到某些 `Core Foundation` 以及 `Foundation` 中的相同数据类型，但是无法对不同的类型进行操作，那此时该怎么办？
 
-> Toll-Free-Bridging
+> Toll-Free-Bridging  
 
 在 MRC 下，不做过多展开，因为 MRC 过于久远且操作简单，直接对类型进行强制转换即可。
 
@@ -48,7 +48,8 @@ NSString *nsStr = (NSString *)cfStr;
 在 ARC 下，进行 `Toll-Free-Briding` 有3种修饰符分别是：
 __bridge, __bridge_retained, __bridge_transfer
 
-**__bridge**
+**__bridge**  
+
 使用此修饰符是要告诉编译器不用转移内存管理权，但是进行 bridge 之后，编译器仍然负责 OC 对象的引用计数，而 CF 的对象需要手动管理。当 OC 转 CF 的时候，运行可能会出现崩溃。
 
 ```
@@ -59,38 +60,40 @@ CF -> OC
 NSString *nsStr = (__bridge NSString *)cfStr;
 ```
 
-**__bridge_retained**
+**__bridge_retained**  
+
 使用这个可以避免运行时可能出现的崩溃问题。本质上是在 bridging 时 编译器对 C 对象进行了 `retain` 操作。但是释放 C 对象的时候需要手动释放。
-**这仅仅针对当 OC 转 C 的时候。**
+
+**这仅仅针对当 OC 转 C 的时候。**  
+
 
 ```
 OC -> CF
 CFStringRef cfStr = (__bridge_retained CFStringRef)nsStr;
-```
+```  
 
-**__bridge_transfer**
+**__bridge_transfer**  
+
 当 CF 转 OC的时候，使用这个可以不用手动去释放 C 对象
 
 ```
 CF -> OC
 NSString *nsStr = (__bridge_transfer NSString *)cfStr;
-```
+```  
 
-## 总结
+## 总结  
 
 
-| __bridge          | bridging时，不会对对象做任何操作 |
-| ----------------- | ---------------------------- |
-| __bridge_retained | bridging时，当 OC 转 CF 时，会对 CF 对象进行 retain 操作|
-| __bridge_transfer | bridging时，当 CF 转 OC 时，会对 CF 对象进行 release 操作|
+| __bridge          | bridging时，不会对对象做任何操作 |  
+| ----------------- | ---------------------------- |  
+| __bridge_retained | bridging时，当 OC 转 CF 时，会对 CF 对象进行 retain 操作|  
+| __bridge_transfer | bridging时，当 CF 转 OC 时，会对 CF 对象进行 release 操作|  
 
 一切的一切，都是由于在 ARC 模式下使用了 CF 对象，ARC 无法对 CF 对象进行内存管理导致的。
 
-## 问题
+## 问题  
 
-
-**那在 Swift 中是否也存在这样的问题？**
-
+**那在 Swift 中是否也存在这样的问题？**  
 
 在 Swift 中对于 `Core Foundation` (以及其他一系列 Core 开头的框架) 在内存管理进行了一系列简化，大大降低了与这些 `Core Foundation` API 打交道的复杂程度。
 同时 CF 类型名称不再是 CFXXXRef, 改成了 CFXXX。
