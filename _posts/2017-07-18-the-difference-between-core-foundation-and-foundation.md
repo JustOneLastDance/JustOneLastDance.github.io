@@ -17,11 +17,11 @@ description: 框架
 两个框架中存在许多类似的类型，名字相同，只是前缀不同而已。
 
 
-| Core Foundation | Foundation |  
-| --------------- | ---------- |  
-| CFString        | NSString   |  
-| CFArray         | NSArray    |  
-| CFDictionary    | NSDictionary |  
+| Core Foundation | Foundation |
+| --------------- | ---------- |
+| CFString        | NSString   |
+| CFArray         | NSArray    |
+| CFDictionary    | NSDictionary |
 
 
 `CF` 取自于 `Core Foundation` 的首字母
@@ -81,14 +81,16 @@ CF -> OC
 NSString *nsStr = (__bridge_transfer NSString *)cfStr;
 ```  
 
-## 总结  
+## 总结
+
 
 | __bridge          | bridging时，不会对对象做任何操作 |
-| ----------------- | ---------------------------- |  
-| __bridge_retained | bridging时，当 OC 转 CF 时，会对 CF 对象进行 retain 操作|  
-| __bridge_transfer | bridging时，当 CF 转 OC 时，会对 CF 对象进行 release 操作|  
+| ----------------- | ---------------------------- |
+| __bridge_retained | bridging时，当 OC 转 CF 时，会对 CF 对象进行 retain 操作| 
+| __bridge_transfer | bridging时，当 CF 转 OC 时，会对 CF 对象进行 release 操作|
 
 一切的一切，都是由于在 ARC 模式下使用了 CF 对象，ARC 无法对 CF 对象进行内存管理导致的。
+
 
 ## 问题  
 
