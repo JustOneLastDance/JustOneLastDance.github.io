@@ -33,7 +33,7 @@ description: 框架
 typedef const struct CF_BRIDGED_TYPE(NSString) __CFString * CFStringRef;
 ```
 
-在某些情况下，需要同时使用到某些 `Core Foundation` 以及 `Foundation` 中的相同数据类型，但是无法对不同的类型进行操作，那此时该怎么办？
+在某些情况下，需要同时使用到某些 `Core Foundation` 以及 `Foundation` 中的相同数据类型，但是无法对不同的类型进行操作，那此时该怎么办？  
 
 > Toll-Free-Bridging  
 
@@ -83,8 +83,7 @@ NSString *nsStr = (__bridge_transfer NSString *)cfStr;
 
 ## 总结  
 
-
-| __bridge          | bridging时，不会对对象做任何操作 |  
+| __bridge          | bridging时，不会对对象做任何操作 |
 | ----------------- | ---------------------------- |  
 | __bridge_retained | bridging时，当 OC 转 CF 时，会对 CF 对象进行 retain 操作|  
 | __bridge_transfer | bridging时，当 CF 转 OC 时，会对 CF 对象进行 release 操作|  
