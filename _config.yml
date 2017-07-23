@@ -29,10 +29,6 @@ permalink: /:year/:title/
 markdown: kramdown
 highlighter: rouge
 
-# Comment
-comment:
-    disqus: justinc
-
 kramdown:
   syntax_highlighter: rouge
   # use Github Flavored Markdown
@@ -42,3 +38,19 @@ kramdown:
 
 gems: ['jekyll-paginate']
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'src']
+
+post:
+template: _post.txt
+extension: md
+page:
+template: _page.txt
+extension: md
+editor: MWeb
+git:
+branch: master
+transfer:
+command: rsync
+settings: -av
+source: _site/
+destination: ~/Git/JustOneLastDance.github.com/
+
