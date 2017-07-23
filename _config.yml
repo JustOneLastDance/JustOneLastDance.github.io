@@ -29,6 +29,10 @@ permalink: /:year/:title/
 markdown: kramdown
 highlighter: rouge
 
+# Comment
+comment:
+    disqus: justinc
+
 kramdown:
   syntax_highlighter: rouge
   # use Github Flavored Markdown
