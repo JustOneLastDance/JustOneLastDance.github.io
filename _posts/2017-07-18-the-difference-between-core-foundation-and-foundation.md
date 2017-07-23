@@ -16,11 +16,13 @@ description: 框架
 
 两个框架中存在许多类似的类型，名字相同，只是前缀不同而已。
 
+
 | Core Foundation | Foundation |
 | --------------- | ---------- |
 | CFString        | NSString   |
 | CFArray         | NSArray    |
 | CFDictionary    | NSDictionary |
+
 
 `CF` 取自于 `Core Foundation` 的首字母
 `NS` 取自于乔布斯回归苹果之前创建的公司名 “NEXT STEP”
@@ -76,6 +78,7 @@ NSString *nsStr = (__bridge_transfer NSString *)cfStr;
 
 ## 总结
 
+
 | __bridge          | bridging时，不会对对象做任何操作 |
 | ----------------- | ---------------------------- |
 | __bridge_retained | bridging时，当 OC 转 CF 时，会对 CF 对象进行 retain 操作|
@@ -85,7 +88,10 @@ NSString *nsStr = (__bridge_transfer NSString *)cfStr;
 
 ## 问题
 
+
 **那在 Swift 中是否也存在这样的问题？**
+
+
 在 Swift 中对于 `Core Foundation` (以及其他一系列 Core 开头的框架) 在内存管理进行了一系列简化，大大降低了与这些 `Core Foundation` API 打交道的复杂程度。
 同时 CF 类型名称不再是 CFXXXRef, 改成了 CFXXX。
 在 Swift 中可以直接使用 CF 对象，不再需要 bridging。因为 CF 对象已经纳入了 ARC 中，可以对其进行内存管理。本质上来说，编译器会在恰当的地方添加 `CF_RETURNS_RETAINED` 和 `CF_RETURNS_NOT_RETAINED` 这样的标注。
