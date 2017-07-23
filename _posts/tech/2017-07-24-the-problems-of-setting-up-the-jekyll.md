@@ -35,16 +35,8 @@ baseurl: 'https://yourname.github.io/'
 
 点击博客进入浏览时，有可能会出现如上图的问题，在网页顶部会显示博文的内容。
 
-解决方法是进入路径 `_includes/head.html`，按如下进行修改
+解决方法是进入路径 `_includes/head.html` ，将所有 `remove: '<p>' | remove: '</p>'` 替换成 `strip_html`
 
-```
-所有形如
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | remove: '<p>' | remove: '</p>' }}{% else %}{{ site.description }}{% endif %}">
-修改成
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.description }}{% endif %}">
-```
-
-即 `remove: '<p>' | remove: '</p>'` 修改成 `strip_html`
 为何如此修改，我也不懂。不了解网页开发，希望有懂的同学能够告诉我一下为什么。
 
 ### 关于 markdown 的问题
