@@ -56,7 +56,7 @@ destination: ~/Git/JustOneLastDance.github.com/
 
 
 lean_cloud:
-enable: true
+  enable: true
   app_id: 3K6qIHIQqMnxPH5KqaDcvwis-gzGzoHsz
   app_key: bzs4lnWUSxd5HWzSszQPGHDr
 
