@@ -16,16 +16,6 @@ robots: noindex
             &#8226; <span class="post-meta__tags">on {% for tag in post.tags %}<a href="{{ site.baseurl }}tags/#{{ tag }}">{{ tag }}</a> {% endfor %}</span>
             {% endif %}
             
-            <!--浏览次数-->
-            {% if site.leancloud.enable %}
-            <span id="{{ post.url }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-text"> Hits:  </span>
-                <span class="leancloud-visitors-count"></span>
-            </span>
-            {% endif %}
-            <!--浏览次数-->
-            
         </div>
         <hr class="post-list__divider">
       </li>

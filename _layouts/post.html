@@ -8,17 +8,6 @@ layout: default
       {% if page.tags.size > 0 %}
       &#8226; <span class="post-meta__tags">on {% for tag in page.tags %}<a href="{{ site.baseurl }}tags/#{{ tag }}">{{ tag }}</a> {% endfor %}</span>
       {% endif %}
-      
-      <!--浏览次数-->
-      {% if site.leancloud.enable %}
-      <span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="{{ page.title }}">
-          <span class="post-meta-divider">|</span>
-          <span class="leancloud-visitors-count"></span>
-          <span class="post-meta-item-text">Watched</span>
-      </span>
-      {% endif %}
-      <!--END-->
-      
     </div>
     <h1 class="post-title">{{ page.title }}</h1>
   </header>
