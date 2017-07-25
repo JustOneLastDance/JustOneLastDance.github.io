@@ -8,6 +8,18 @@ layout: default
       {% if page.tags.size > 0 %}
       &#8226; <span class="post-meta__tags">on {% for tag in page.tags %}<a href="{{ site.baseurl }}tags/#{{ tag }}">{{ tag }}</a> {% endfor %}</span>
       {% endif %}
+      
+      <!--show times-->
+      <span id="http://www.cloudchou.com" class="leancloud_visitors meta_data_item" data-flag-title="">
+          <span class="post-meta-item-icon">
+              <span class="octicon octicon-eye"></span>
+          </span>
+          <span class="old-visitors-count" style="display: none;"></span>
+          <span class="leancloud-visitors-count"></span>
+          <span class="post-meta-item-text">次浏览</span>
+      </span>
+      <!--end-->
+      
     </div>
     <h1 class="post-title">{{ page.title }}</h1>
   </header>

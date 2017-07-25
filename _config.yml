@@ -54,3 +54,7 @@ settings: -av
 source: _site/
 destination: ~/Git/JustOneLastDance.github.com/
 
+lean_cloud:
+  app_id: 3K6qIHIQqMnxPH5KqaDcvwis-gzGzoHsz
+  app_key: bzs4lnWUSxd5HWzSszQPGHDr
+
