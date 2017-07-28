@@ -36,8 +36,8 @@ description: 解决blog问题
 ```
 
 第一行代码，在两个参数后面添加对应内容即可  
-`span id="{{ page.url }}"`
-`data-flag-title="{{ post.title }}"`
+`span id="\{{ page.url }}"`
+`data-flag-title="\{{ post.title }}"`
 
 在此感谢这篇 [在个人博客中添加文章点击次数](http://www.voidcn.com/blog/u013553529/article/p-6519768.html)，给我指了一条明路。
 
