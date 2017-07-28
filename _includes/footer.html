@@ -103,7 +103,7 @@ function addCount(Counter) {
                newcounter.setACL(acl);
                /* End Set ACL */
                newcounter.set("title", title);
-               newcounter.set("url", url);
+               newcounter.set("url", page.url);
                var OLD_COUNT_CONTAINER_REF = '.old-visitors-count';
                var $element = $(document.getElementById(page.url));
                var oldCountSpan = $element.find(OLD_COUNT_CONTAINER_REF).text();
