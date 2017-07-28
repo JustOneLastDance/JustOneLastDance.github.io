@@ -49,13 +49,13 @@
                              var item = results[i];
                              var url = item.get('url');
                              var time = item.get('time');
-                             var element = document.getElementsByTagName('title');
+                             var element = document.getElementById(url);
                              
                              $(element).find(COUNT_CONTAINER_REF).text(time);
                              }
                              for (var i = 0; i < entries.length; i++) {
                              var url = entries[i];
-                             var element = document.getElementsByTagName('title');
+                             var element = document.getElementById(url);
                              var countSpan = $(element).find(COUNT_CONTAINER_REF);
                              if (countSpan.text() == '') {
                              var oldCountSpan = $(element).find(OLD_COUNT_CONTAINER_REF).text();
@@ -87,7 +87,7 @@ function addCount(Counter) {
                counter.increment("time");
                counter.save(null, {
                             success: function(counter) {
-                            var $element = $(document.getElementsByTagName('title'));
+                            var $element = $(document.getElementById(url));
                             $element.find('.leancloud-visitors-count').text(counter.get('time'));
                             },
                             error: function(counter, error) {
@@ -105,7 +105,7 @@ function addCount(Counter) {
                newcounter.set("title", title);
                newcounter.set("url", url);
                var OLD_COUNT_CONTAINER_REF = '.old-visitors-count';
-               var $element = $(document.getElementsByTagName('title'));
+               var $element = $(document.getElementById(url));
                var oldCountSpan = $element.find(OLD_COUNT_CONTAINER_REF).text();
                if(oldCountSpan!=''){
                newcounter.set("time", parseInt(oldCountSpan)+1);
@@ -114,7 +114,7 @@ function addCount(Counter) {
                }
                newcounter.save(null, {
                                success: function(newcounter) {
-                               var $element = $(document.getElementsByTagName('title'));
+                               var $element = $(document.getElementById(url));
                                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
                                },
                                error: function(newcounter, error) {
