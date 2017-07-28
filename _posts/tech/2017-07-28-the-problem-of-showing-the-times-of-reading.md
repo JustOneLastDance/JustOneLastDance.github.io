@@ -35,10 +35,9 @@ description: 解决blog问题
 </span>
 ```
 
-第一行代码，在两个参数后面添加对应内容即可  
-`span id="\{{ page.url }}"`
-`data-flag-title="\{{ post.title }}"`
+第一行代码，在两个参数后面添加对应内容即可    
+![截图二](http://wx2.sinaimg.cn/mw690/a73cca61gy1fhzr1vrd4zj215w01qmxo.jpg)
 
-在此感谢这篇 [在个人博客中添加文章点击次数](http://www.voidcn.com/blog/u013553529/article/p-6519768.html)，给我指了一条明路。
+在此感谢这篇 [在个人博客中添加文章点击次数](http://www.voidcn.com/blog/u013553529/article/p-6519768.html)，给我指了一条明路解决了这个问题。
 
 
