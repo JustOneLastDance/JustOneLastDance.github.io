@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 关于 __autoreleasin问题
+title: 关于 __autoreleasing 问题
 date: 2017-08-04 15:42:50 +0800
 categories: 技术
 tags: iOS
