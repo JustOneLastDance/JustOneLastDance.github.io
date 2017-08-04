@@ -23,7 +23,8 @@ description: 知识点
 4. 不是自己拥有的对象，无法释放  
 
 还有一条至关重要的原则是，来自官方文档 `Memory Management Policy` 章节中的这样一句话
->You own any object you create
+>You own any object you create  
+
 >You create an object using a method whose name begins with “alloc”, “new”, “copy”, or “mutableCopy” (for example, alloc, newObject, or mutableCopy).
 
 在创建对象时，会用到包含了 `alloc`、`new`、`copy`、`mutableCopy` 这些字眼的方法，用这些方法创建出来的对象，才是被认为是自己创建，并且需要自己拥有。换句话来说，要对这些“对象”负责。
