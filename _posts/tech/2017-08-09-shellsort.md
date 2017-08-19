@@ -3,7 +3,7 @@ layout: post
 title: 排序（二）—— 希尔排序
 date: 2017-08-09 18:29:29 +0800
 categories: 技术
-tags: Data Structure
+tags: DataStructure
 keywords: sort
 description: 知识整理
 ---

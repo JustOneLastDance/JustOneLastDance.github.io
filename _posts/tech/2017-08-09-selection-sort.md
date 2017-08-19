@@ -3,7 +3,7 @@ layout: post
 title: 排序（三）—— 选择排序
 date: 2017-08-09 20:32:34 +0800
 categories: 技术
-tags: Data Structure
+tags: DataStructure
 keywords: sort
 description: 知识整理
 ---
