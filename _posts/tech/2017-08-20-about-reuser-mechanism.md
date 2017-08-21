@@ -39,10 +39,16 @@ open func dequeueReusableCell(withIdentifier identifier: String, for indexPath: 
 首先解释一下 `dequeue`，“remove from a queue”，从一个队列中移除。在程序中的体现是，当 `cell` 移除屏幕之外，会把这个 `cell` 从 `可见cell数组` 中移除，同时添加到重用池当中去，为即将显示的 `cell` 做准备。什么时候需要重用 `cell`，还是创建新的 `cell` 都得靠上述的2个函数来实现。
 
 回过头来看上述的两个函数分别是什么含义。  
-`dequeueReusableCell(withIdentifier identifier: String)` ：根据官方文档注释来看的话意思是说通过代理获得一个已经创建好的 `cell`，而不是重新创建一个新的 `cell`。同时需要注意的是返回值，返回值是 `UITableViewCell?`。在 `Swift` 的语义里，对象加一个问号代表这个对象是个 `Optional`，它是一个可选项。可选项的意思是说，这个返回值啊，可以有也可以没有。
+`dequeueReusableCell(withIdentifier identifier: String)` ：根据官方文档注释来看的话意思是说通过代理获得一个已经创建好的 `cell`，而不是重新创建一个新的 `cell`。同时需要注意的是返回值，返回值是 `UITableViewCell?`。在 `Swift` 的语义里，对象加一个问号代表这个对象是个 `Optional`，它是一个可选项。可选项的意思是说，这个返回值啊，可以有也可以没有。  
 `dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath)`：根据官方文档注释来看的话意思是说，这是一个最新的函数，能够保证返回 `cell` 是一定有值的，但是必须是注册过标志符的。建议使用这个最新的函数来实现重用机制。  
 
 **为何会出现开头提到的问题**  
+我的理解是，当 `cell` 被重用的时候，即从重用池拿出来的时候， `cell` 依旧保持着放入重用池之前的状态和搭载的数据。而我出现的问题是数据是显示正确的，而 `tableView` 的偏移发生了变化。更有意思的是有问题的 `tableView` 的偏移量是和前一个拖动发生偏移的 `tableView` 的偏移量一毛一样。在 `cell` 的文件中会在 `setModel` 为数据重新赋值，却没有对 `tableView` 进行重置。因此这是开头提到问题的原因。
+
+**其他出现重用问题的可能**  
+1. `identifier` 不一致。建议将 `identifier` 写成一个宏可以避免拼写错误的问题。
+2. 将 `dequeueReusableCell(withIdentifier identifier: String)` 改写成新的函数 `dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath)`
+3. 检查自定义的 `cell` 内部控件是否每次都进行了重置。
 
 
 
