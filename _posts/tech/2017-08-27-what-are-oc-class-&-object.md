@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Objective-C Class & Obejct 是什么
+title: Objective-C Class & Object 是什么
 date: 2017-08-27 20:53:39 +0800
 categories: 技术
 tags: iOS
